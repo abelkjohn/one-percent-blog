@@ -1,7 +1,8 @@
-import Image from 'next/image'
-
+import React from 'react'
+import Header from '../components/Header'
 export default function Home() {
   return (
-    <h1>One Percent</h1>
+    <Header />
   )
 }
+
