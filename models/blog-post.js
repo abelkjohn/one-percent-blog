@@ -5,7 +5,6 @@ const postSchema = new Schema(
         title: String,
         description: String,
         picture: String,
-        date: Date,
         day: String,
         skills: Array,
     },
@@ -15,6 +14,6 @@ const postSchema = new Schema(
 )
 
 
-const Post = mongoose.models.Blog || mongoose.model("Blog", postSchema)
+const Post = mongoose.models.Post || mongoose.model("Post", postSchema)
 
 export default Post
