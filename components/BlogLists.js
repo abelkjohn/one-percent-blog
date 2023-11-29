@@ -18,14 +18,31 @@ const getPosts = async () => {
 export default async function PostList(){
  const { blog } = await getPosts()
 
-    return blog.map(i => {
-        return <div className='flex '>
-            <h1>{i.title}</h1>
-            <p>{i.description}</p>
-            <p>{i.createdAt.split('').splice(0, 10).join('')}</p>
-            <p>{i.skills.map(i => i + ",")}</p>
-            <p>{i.day}</p>
+    return (
+        <div>
+            <div>
+                {blog.map(i => {
+                    return (
+                        <div>
+                            {i.createdAt}
+                        </div>
+                    )
+                })}
+            </div>
+            <div className='right-0 absolute border-l-2 w-8/12 pb-96 mt-20'>
+                {blog.map(i => {
+                    return (
+                            <div className='flex  justify-start  '>
+                                <div className='flex flex-col'>
+                                    <h1>{i.title}</h1>
+                                    <p>{i.description}</p>
+                                    <p>{i.skills.map(i => i + ",")}</p>
+                                </div>
+                            </div>
+                    )
+                })}
+            </div>
         </div>
-    })
+    )
 
 }
