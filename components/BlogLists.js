@@ -19,20 +19,20 @@ export default async function PostList(){
  const { blog } = await getPosts()
 
     return (
-        <div>
-            <div>
+        <div className='flex mt-20'>
+            <div className='w-4/12 text-right'>
                 {blog.map(i => {
                     return (
-                        <div>
-                            {i.createdAt}
+                        <div className='h-52'>
+                            <p>{i.createdAt}, {i.day}</p>
                         </div>
                     )
                 })}
             </div>
-            <div className='right-0 absolute border-l-2 w-8/12 pb-96 mt-20'>
+            <div className='right-0 absolute border-l-2 pl-1 w-8/12 pb-96 '>
                 {blog.map(i => {
                     return (
-                            <div className='flex  justify-start  '>
+                            <div className='flex  justify-start  h-52'>
                                 <div className='flex flex-col'>
                                     <h1>{i.title}</h1>
                                     <p>{i.description}</p>
