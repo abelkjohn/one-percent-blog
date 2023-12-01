@@ -23,8 +23,11 @@ export default async function PostList(){
             <div className='w-4/12 text-right'>
                 {blog.map(i => {
                     return (
-                        <div className='h-52'>
-                            <p>{i.createdAt}, {i.day}</p>
+                        <div className='h-52 relative'>
+                            <div  className='absolute top-8 right-1'>
+                                <p>{i.createdAt.split('').splice(0, 10).join("")}, {i.day}</p>
+                                <p> </p>
+                            </div>
                         </div>
                     )
                 })}
@@ -32,11 +35,11 @@ export default async function PostList(){
             <div className='right-0 absolute border-l-2 pl-1 w-8/12 pb-96 '>
                 {blog.map(i => {
                     return (
-                            <div className='flex  justify-start  h-52'>
-                                <div className='flex flex-col'>
+                            <div className='flex  justify-start h-52 border-b-2'>
+                                <div className='flex flex-col mt-5 pl-2 '>
                                     <h1>{i.title}</h1>
                                     <p>{i.description}</p>
-                                    <p>{i.skills.map(i => i + ",")}</p>
+                                    <p>{i.skills.map((e, i, a) => i === a.length - 1 ? e : `${e}, `)}</p>
                                 </div>
                             </div>
                     )
