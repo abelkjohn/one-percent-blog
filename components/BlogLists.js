@@ -16,8 +16,8 @@ const getPosts = async () => {
 }
 
 export default async function PostList(){
- const { blog } = await getPosts() ? getPosts() : ""
- const rBlog = blog ? blog.reverse() : []
+ const { blog } = await getPosts()
+ const rBlog = blog.reverse()
     return (
         <div className='flex mt-20'>
             <div className='w-4/12 text-right'>
