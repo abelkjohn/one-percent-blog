@@ -16,7 +16,8 @@ const getPosts = async () => {
 }
 
 export default async function PostList(){
- const { blog } = await getPosts()
+ if (getPosts()){
+    const { blog } = await getPosts()
  const rBlog = blog.reverse()
     return (
         <div className='flex mt-20'>
@@ -48,4 +49,5 @@ export default async function PostList(){
         </div>
     )
 
+ } 
 }
