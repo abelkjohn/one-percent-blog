@@ -2,7 +2,7 @@ import React from 'react'
 
 const getPosts = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/posts', {
+        const res = await fetch('https://one-percent-blog.vercel.app/api/posts', {
             cache: "no-store"
         })
         if (!res.ok){
@@ -21,7 +21,7 @@ export default async function PostList(){
     return (
         <div className='flex mt-20'>
             <div className='w-4/12 text-right'>
-                {rBlog.map(i => {
+                {rblog.map(i => {
                     return (
                         <div className='h-52 relative'>
                             <div  className='absolute top-8 right-1'>
